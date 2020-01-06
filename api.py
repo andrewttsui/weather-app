@@ -5,12 +5,12 @@ import json
 BASE_OPENWEATHER_URL = 'http://api.openweathermap.org/data/2.5/weather'
 OPENWEATHER_API_KEY = 'a97d18f6f613cdaacb9af32e9c0bcd52'
 
-def build_url(city_id: str) -> str:
+def build_url(city_id: str, units: str) -> str:
     '''
     Creates the URL for the location.
     '''
     parameters = [
-        ('APPID', OPENWEATHER_API_KEY), ('id', city_id), ('units', 'imperial')
+        ('APPID', OPENWEATHER_API_KEY), ('id', city_id), ('units', units)
     ]
     return BASE_OPENWEATHER_URL + '?' + urllib.parse.urlencode(parameters)
 
